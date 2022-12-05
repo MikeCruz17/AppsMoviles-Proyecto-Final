@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Noticias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--CREANDO LAS CARTAS SEGUN LA CANTIDAD DE ELEMENTOS DE LA API.-->
+  <ion-card *ngFor="let item of items">
+
+    <img src={{item.foto}} />
+    <ion-card-header>
+      <ion-card-title>{{item.titulo}}</ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content class="texto-justificado">
+      {{item.contenido}}
+    </ion-card-content>
+
+    <ion-card-content class="ion-text-center">
+      Fecha: <ion-text class="text-date">{{item.fecha}}</ion-text>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

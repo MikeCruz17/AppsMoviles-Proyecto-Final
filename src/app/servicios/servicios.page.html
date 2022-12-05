@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Servicios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+ <!--CREANDO LAS CARTAS SEGUN LA CANTIDAD DE ELEMENTOS DE LA API.-->
+
+  <ion-card *ngFor="let item of items">
+    <img alt="Silhouette of mountains" src={{item.foto}} />
+    <ion-card-header>
+      <ion-card-title>{{item.nombre}}</ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content class="texto-justificado">
+      {{item.descripcion}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

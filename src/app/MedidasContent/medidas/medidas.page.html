@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Medidas</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--CREANDO LAS CARTAS SEGUN LA CANTIDAD DE ELEMENTOS DE LA API.-->
+  <ion-card *ngFor="let item of items">
+
+    <img src={{item.foto}} />
+    <ion-card-header>
+
+      <div class="centrar-div">
+
+        <ion-card-title>{{item.titulo}}</ion-card-title>
+
+        <br>
+
+        <ion-button fill="solid" (click) = "openModal(item)">
+          <ion-icon slot="start" name="information-circle"></ion-icon>
+          Más información
+        </ion-button>
+      </div>
+
+
+    </ion-card-header>
+
+  </ion-card>
+
+</ion-content>

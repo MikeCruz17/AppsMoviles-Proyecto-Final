@@ -1,0 +1,53 @@
+
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <div>
+
+      <ion-title class="text-title">
+        Desarrolladores
+      </ion-title>
+
+      <ion-icon name="logo-angular" class="icon-format"></ion-icon>
+
+    </div>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let item of arr">
+    <ion-card-content>
+      <ion-list>
+
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img [src]='item.foto' class="foto-format" />
+          </ion-thumbnail>
+
+          <div class="div-text-format">
+
+            <ion-text class="text-format">{{item.nombreCompleto}}</ion-text>
+
+          </div>
+        </ion-item>
+
+        <ion-item>
+          <a frame-ancestors [href]="item.link">
+            <ion-button fill="solid" class="formato-boton">
+              <ion-icon name="paper-plane-outline"></ion-icon>
+              Telegram
+            </ion-button>
+          </a>
+        </ion-item>
+
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

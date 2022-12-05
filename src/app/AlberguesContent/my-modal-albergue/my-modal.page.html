@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+
+    <div class="text-div">
+
+    <ion-text class="text-center">{{Datos?.edificio}}</ion-text>
+    
+    </div>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="arrow-back-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-item-group>
+    <h4 class="text-center">Datos del albergue</h4>
+
+    <!--CIUDAD-->
+
+    <ion-item-divider>
+      <ion-label>Ciudad</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>{{Datos?.ciudad}}</ion-label>
+    </ion-item>
+
+    <!--CAPACIDAD-->
+
+    <ion-item-divider>
+      <ion-label>Capacidad</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+
+      <!--SI ES NULO-->
+      <ion-label *ngIf="Datos?.capacidad==''">N/A</ion-label>
+
+      <ion-label>{{Datos?.capacidad}}</ion-label>
+    </ion-item>
+
+    <!--CODIGO-->
+
+    <ion-item-divider>
+      <ion-label>Código</ion-label>
+    </ion-item-divider>
+
+
+    <ion-item>
+      <ion-label>{{Datos?.codigo}}</ion-label>
+    </ion-item>
+
+    <!--COORDINADOR-->
+
+    <ion-item-divider>
+      <ion-label>Coordinador</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>{{Datos?.coordinador}}</ion-label>
+    </ion-item>
+
+    <!--TELEFONO-->
+
+    <ion-item-divider>
+      <ion-label>Teléfono</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>{{Datos?.telefono}}</ion-label>
+    </ion-item>
+
+  </ion-item-group>
+
+
+</ion-content>

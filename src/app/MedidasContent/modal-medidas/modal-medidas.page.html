@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="arrow-back-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <div class="text-div">
+
+      <ion-text class="title">{{Datos?.titulo}}</ion-text>
+
+    </div>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <h4 class="ion-text-center">Medidas Preventivas</h4>
+
+  <!--CONTENIDO-->
+  <ion-item>
+    <ion-label class="ion-text-wrap texto-justificado">
+      {{Datos?.descripcion}}
+    </ion-label>
+  </ion-item>
+
+</ion-content>
