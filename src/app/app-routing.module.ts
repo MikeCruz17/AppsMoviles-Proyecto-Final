@@ -59,7 +59,15 @@ const routes: Routes = [
   {
     path: 'integrantes',
     loadChildren: () => import('./integrantes/integrantes.module').then( m => m.IntegrantesPageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
+
 
  
 ];

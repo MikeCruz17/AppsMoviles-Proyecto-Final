@@ -15,6 +15,8 @@ export class AppComponent {
     { title: 'Miembros', url: '/miembros', icon: 'people' },
     { title: 'Voluntario', url: '/voluntario', icon: 'person-add' },
     { title: 'Acerca de', url: '/integrantes', icon: 'code-slash' },
+    { title: 'LogIn', url: '/login', icon: 'code-slash' },
+    { title: 'Registrarse', url: '/registro', icon: 'code-slash' },
  
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
