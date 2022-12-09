@@ -21,7 +21,7 @@
     <!--CEDULA-->
     <ion-item>
       <ion-label>Cédula</ion-label>
-      <ion-input type="text"  mask="***-*******-*" maxlength="13" placeholder="000-0000000-0" [clearInput]="true"></ion-input>
+      <ion-input [(ngModel)]="Cedula" type="text"  mask="***-*******-*" maxlength="13" placeholder="000-0000000-0" [clearInput]="true"></ion-input>
     </ion-item>
 
     <!--NOTA: [clearInput]="true" PERMITE HABILITAR UN BOTON EN FORMA DE CRUZ PARA ELIMINAR EL 
@@ -30,37 +30,37 @@
     <!--Nombre-->
     <ion-item>
       <ion-label>Nombre</ion-label>
-      <ion-input [ngModel]='Nombre' [clearInput]="true" placeholder="Ej: Miguel"></ion-input>
+      <ion-input [(ngModel)]="Nombre" [clearInput]="true" placeholder="Ej: Miguel"></ion-input>
     </ion-item>
 
     <!--Apellido-->
     <ion-item>
       <ion-label>Apellido</ion-label>
-      <ion-input [clearInput]="true" placeholder="Ej: Terrero"></ion-input>
+      <ion-input [(ngModel)]="Apellido" [clearInput]="true" placeholder="Ej: Terrero"></ion-input>
     </ion-item>
 
     <!--CONTRASEÑA-->
     <ion-item>
       <ion-label>Contraseña</ion-label>
-      <ion-input [clearInput]="true" type="password"></ion-input>
+      <ion-input [(ngModel)]="Contrasena" [clearInput]="true" type="password"></ion-input>
     </ion-item>
 
     <!--CONFIRMAR CONTRASEÑA-->
     <ion-item>
       <ion-label>Confirmar contraseña</ion-label>
-      <ion-input [clearInput]="true" type="password"></ion-input>
+      <ion-input [(ngModel)]="ConfContrasena" [clearInput]="true" type="password"></ion-input>
     </ion-item>
 
     <!--CORREO ELECTRÓNICO-->
     <ion-item>
       <ion-label>Correo</ion-label>
-      <ion-input [clearInput]="true" type="email" placeholder="Ej: miguel@gmail.com"></ion-input>
+      <ion-input [(ngModel)]="Correo" [clearInput]="true" type="email" placeholder="Ej: miguel@gmail.com"></ion-input>
     </ion-item>
 
     <!--TELÉFONO-->
     <ion-item>
       <ion-label>Teléfono</ion-label>
-      <ion-input [clearInput]="true" type="tel" mask="+1 (***) ***-****" maxlength="17" placeholder="+1 (888) 888-8888"></ion-input>
+      <ion-input [(ngModel)]="Telefono" [clearInput]="true" type="tel" mask="+1 (***) ***-****" maxlength="17" placeholder="+1 (888) 888-8888"></ion-input>
     </ion-item>
 
     <!--BOTON-->
