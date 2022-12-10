@@ -48,8 +48,14 @@
     <!--CONFIRMAR CONTRASEÑA-->
     <ion-item>
       <ion-label>Confirmar contraseña</ion-label>
-      <ion-input [(ngModel)]="ConfContrasena" [clearInput]="true" type="password"></ion-input>
+      <ion-input [(ngModel)]="ConfContrasena" [clearInput]="true" onchange="validationPassword()" type="password"></ion-input>
     </ion-item>
+
+    <div *ngIf="validationPassword() === false" class="text-password">
+
+      <ion-text color="danger">Las contraseñas no son iguales</ion-text>
+
+    </div>
 
     <!--CORREO ELECTRÓNICO-->
     <ion-item>
