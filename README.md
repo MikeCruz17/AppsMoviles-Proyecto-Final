@@ -1,5 +1,7 @@
-# AppsMoviles-Proyecto-Final
+-- AppsMoviles-Proyecto-Final
  Ionic + Angular
 
-# COMANDO A EJECUTAR AL MOMENTO DE GENERAR EL NODE_MODULES.
-npm install --legacy-peer-deps
+-- COMANDO A EJECUTAR AL MOMENTO DE GENERAR EL NODE_MODULES.
+> npm install --legacy-peer-deps
+
+# ES IMPORTANTE QUE ELIMINEN EL ARCHIVO PACKAGE.JSON PARA LA CORRECTA INSTALACION DE LOS PAQUETES.
