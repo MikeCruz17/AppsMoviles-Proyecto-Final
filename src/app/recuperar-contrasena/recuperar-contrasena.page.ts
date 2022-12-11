@@ -3,6 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { IRecuperarContrasena } from 'src/Interfaces/IRecuperarContrasena';
 
+interface Formato
+{
+  datos: [],
+  exito: boolean,
+  mensaje: any
+}
+
+
 @Component({
   selector: 'app-recuperar-contrasena',
   templateUrl: './recuperar-contrasena.page.html',
@@ -14,7 +22,8 @@ export class RecuperarContrasenaPage implements OnInit {
 
   // DECLARACION DE LAS VARIABLES A UTILIZAR PARA LOS FORMULARIOS.
   public Cedula?: string;
-  public Contrasena?: string;
+  public Correo?: string;
+  public nuevaContrasena?: string;
 
   ngOnInit() {
   }
@@ -27,14 +36,14 @@ export class RecuperarContrasenaPage implements OnInit {
     // ASIGNACION DE LOS VALORES AL OBJETO.
     this.item = {
       cedula: this.Cedula!,
-      clave: this.Contrasena!
+      correo: this.Correo!
     };
 
     const confimacion =
       this.item.cedula === null ||
       this.item.cedula === undefined ||
-      this.item.clave === null ||
-      this.item.clave === undefined
+      this.item.correo === null ||
+      this.item.correo === undefined
         ? false
         : true;
 
@@ -53,6 +62,7 @@ export class RecuperarContrasenaPage implements OnInit {
     }
   }
 
+
   setPost(recuperar: IRecuperarContrasena) {
 
     // URL API
@@ -64,7 +74,7 @@ export class RecuperarContrasenaPage implements OnInit {
 
 
    data.append('cedula', recuperar.cedula);
-   data.append('clave', recuperar.clave);
+   data.append('correo', recuperar.correo);
     
 
 
@@ -72,19 +82,14 @@ export class RecuperarContrasenaPage implements OnInit {
     this.http.post(URL, data).subscribe(
       (recuperar) => {
         
+      
+        
         // MENSAJE DE CONFIRMACION DE LA API.
         console.log(recuperar);
-
+        
+        this.nuevaContrasena = Object(recuperar)["mensaje"];
         // SI TODO FUE CORRECTO, MOSTRARA UN MENSAJE EN PANTALLA.
         this.presentAlert(true);
-
-
-        // Actualizar la pagina.
-        setTimeout(() => {
-
-          window.location.reload();
-          
-        }, 3000);
 
       },
       (error) => {
@@ -101,8 +106,8 @@ export class RecuperarContrasenaPage implements OnInit {
     if(conf){
 
       alert = await this.alertController.create({
-        header: 'Recibido',
-        message: 'Los datos fueron enviados correctamente.',
+        header: 'Su contraseña nueva es:',
+        message: `${this.nuevaContrasena}`,
         buttons: ['OK'],
       });
 
