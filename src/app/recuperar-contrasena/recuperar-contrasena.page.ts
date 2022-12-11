@@ -1,93 +1,93 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { IFormatoLogin } from 'src/Interfaces/IFormatoLogin';
+import { IRecuperarContrasena } from 'src/Interfaces/IRecuperarContrasena';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-recuperar-contrasena',
+  templateUrl: './recuperar-contrasena.page.html',
+  styleUrls: ['./recuperar-contrasena.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class RecuperarContrasenaPage implements OnInit {
 
-  constructor(private alertController: AlertController, public http: HttpClient) {
+  constructor(private alertController: AlertController, public http: HttpClient) { }
 
-  }
-
+  // DECLARACION DE LAS VARIABLES A UTILIZAR PARA LOS FORMULARIOS.
   public Cedula?: string;
-  public Clave?: string;
+  public Contrasena?: string;
 
   ngOnInit() {
   }
 
-  item?: IFormatoLogin;
+  // CREACION DE OBJETO TIPO VOLUNTARIO.
+  item?: IRecuperarContrasena;
 
-   LogIn(){
+  getPassword() {
+
+    // ASIGNACION DE LOS VALORES AL OBJETO.
     this.item = {
-      cedula : this.Cedula!,
-      clave : this.Clave!,
-     
-    }
+      cedula: this.Cedula!,
+      clave: this.Contrasena!
+    };
 
-    // CONFIRMACION
     const confimacion =
       this.item.cedula === null ||
       this.item.cedula === undefined ||
       this.item.clave === null ||
-      this.item.clave === undefined ? false : true;
-     
+      this.item.clave === undefined
+        ? false
+        : true;
+
+    // CONFIRMACION PARA ENVIAR TODOS LOS PARAMETROS
+    // SOLICITADOS POR LA API.
+    if (confimacion) {
+      
+      // ENVIO DE LOS DATOS A LA API
+      this.setPost(this.item!);
+      
+    } 
     
-      if (confimacion) {
-      
-        // ENVIO DE LOS DATOS A LA API
-        console.log(this.item!);
-        this.setPost(this.item!);
-        
-      } 
-      
-      // SI FALLA, MOSTRARA UN MODAL.
-      else {
-        this.presentAlert(false);
-      }
+    // SI FALLA, MOSTRARA UN MODAL.
+    else {
+      this.presentAlert(false);
+    }
+  }
 
-   }
-
-   setPost(login: IFormatoLogin) {
+  setPost(recuperar: IRecuperarContrasena) {
 
     // URL API
-    const URL = 'https://adamix.net/defensa_civil/def/iniciar_sesion.php';
+    const URL = 'https://adamix.net/defensa_civil/def/recuperar_clave.php';
     
     // CONSTANTE QUE SIRVE PARA DARLE EL FORMATO DEL OBJETO
     // QUE RECIBIRA LA API.
     let data = new FormData();
 
 
-    data.append('cedula', login.cedula);
-    data.append('clave', login.clave);
+   data.append('cedula', recuperar.cedula);
+   data.append('clave', recuperar.clave);
+    
 
-    console.log(login)
 
     // ENVIANDO EL OBJETO A LA API.
     this.http.post(URL, data).subscribe(
-      (voluntario) => {
-        console.log(data);
+      (recuperar) => {
+        
         // MENSAJE DE CONFIRMACION DE LA API.
-        console.log(voluntario);
+        console.log(recuperar);
 
         // SI TODO FUE CORRECTO, MOSTRARA UN MENSAJE EN PANTALLA.
-        // this.presentAlert(true);
+        this.presentAlert(true);
 
 
         // Actualizar la pagina.
-      /*  setTimeout(() => {
+        setTimeout(() => {
 
           window.location.reload();
           
         }, 3000);
-        */
+
       },
       (error) => {
-      
         console.log(error);
       }
     );
@@ -116,5 +116,5 @@ export class LoginPage implements OnInit {
   
     await alert.present();
   }
-
 }
+

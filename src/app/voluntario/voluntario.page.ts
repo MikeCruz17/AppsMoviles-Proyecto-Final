@@ -102,9 +102,14 @@ export class VoluntarioPage implements OnInit {
     let data = new FormData();
 
 
-    for (let i in voluntario) {
-      data.append(i, JSON.stringify(voluntario));
-    }
+   data.append('cedula', voluntario.cedula);
+   data.append('nombre', voluntario.nombre);
+   data.append('apellido', voluntario.apellido);
+   data.append('correo', voluntario.correo);
+   data.append('clave', voluntario.clave);
+   data.append('telefono', voluntario.telefono);
+    
+
 
     // ENVIANDO EL OBJETO A LA API.
     this.http.post(URL, data).subscribe(
