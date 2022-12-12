@@ -70,10 +70,20 @@ export class LoginPage implements OnInit {
     // ENVIANDO EL OBJETO A LA API.
     this.http.post(URL, data).subscribe(
       (voluntario) => {
-        console.log(data);
-        // MENSAJE DE CONFIRMACION DE LA API.
-        console.log(voluntario);
+   
+        // ALMACENANDO LOS DATOS DEL USUARIO QUE RETORNA EL LOGIN
+        // Y SE CONVIERTE A STRING PARA ALMACENARLOS EN EL LOCAL-STORAGE.
+        const datos = JSON.stringify(Object(voluntario)["datos"]);
 
+        // INSERTAT DATS AL LOCAL-STORAGE.
+        localStorage.setItem('Usuario', datos);
+
+        // CONVERTIR LOS DATOS DEL LOCAL-STORAGE EN JSON.
+        const item = JSON.parse(localStorage.getItem('Usuario')!);
+
+        // UNA VEZ CONVERTIDO LOS DATOS A JSON, EXTRAEMOS EL NOMBRE DEL USUARIO.
+        console.log(item.nombre)
+        
         // SI TODO FUE CORRECTO, MOSTRARA UN MENSAJE EN PANTALLA.
         // this.presentAlert(true);
 
@@ -91,6 +101,12 @@ export class LoginPage implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  borrarSesion(){
+
+    localStorage.removeItem('Usuario');
+
   }
 
   // ALERTA 
