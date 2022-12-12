@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { IFormatoLogin } from 'src/Interfaces/IFormatoLogin';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ import { IFormatoLogin } from 'src/Interfaces/IFormatoLogin';
 })
 export class LoginPage implements OnInit {
 
-  constructor(private alertController: AlertController, public http: HttpClient) {
+  constructor(private alertController: AlertController, public http: HttpClient, private router: Router) {
 
   }
 
@@ -42,7 +43,8 @@ export class LoginPage implements OnInit {
         // ENVIO DE LOS DATOS A LA API
         console.log(this.item!);
         this.setPost(this.item!);
-        
+
+        this.router.navigate(['/bienvenido']);
       } 
       
       // SI FALLA, MOSTRARA UN MODAL.

@@ -16,14 +16,17 @@ export class AppComponent {
   Confirmacion() {
     console.log(this.item);
 
-    if (this.item === 0) {
+    // VISTAS QUE VERÁ EL USUARIO
+    if (this.item != null) {
       this.appPages = [
-        { title: 'Historia', url: '/historia', icon: 'information-circle' },
-        { title: 'Servicios', url: '/servicios', icon: 'people-circle' },
         { title: 'Noticias', url: '/noticias', icon: 'megaphone' },
-        { title: 'Videos', url: '/videos', icon: 'videocam' },
+        { title: 'Reportar Situación', url: '/reportar-situacion', icon: 'people-circle' },
+        { title: 'Mis Situaciones', url: '/mis-situaciones', icon: 'people-circle' },
+        { title: 'Mapa de situaciones', url: '/mapa-situaciones', icon: 'business' },
+        { title: 'Cambiar Contraseña', url: '/cambiar-contrasena', icon: 'videocam' },
       ];
     } else {
+      // VISTAS QUE VERÁ UN USUARIO COMÚN
       this.appPages = [
         { title: 'Historia', url: '/historia', icon: 'information-circle' },
         { title: 'Servicios', url: '/servicios', icon: 'people-circle' },
@@ -35,11 +38,11 @@ export class AppComponent {
         { title: 'Voluntario', url: '/voluntario', icon: 'person-add' },
         { title: 'Acerca de', url: '/integrantes', icon: 'code-slash' },
         { title: 'LogIn', url: '/login', icon: 'code-slash' },
-        {
-          title: 'Recuperar contraseña',
-          url: '/recuperar-contrasena',
-          icon: 'code-slash',
-        },
+        // {
+        //   title: 'Recuperar contraseña',
+        //   url: '/recuperar-contrasena',
+        //   icon: 'code-slash',
+        // },
       ];
     }
   }

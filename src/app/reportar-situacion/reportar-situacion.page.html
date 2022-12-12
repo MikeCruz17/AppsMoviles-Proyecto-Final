@@ -1,0 +1,58 @@
+<ion-header>
+
+  <ion-toolbar color="primary"></ion-toolbar>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Reportar situación</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <!--TÍTULO-->
+   <ion-item>
+    <ion-label>Título</ion-label>
+    <ion-input [(ngModel)]="Titulo" type="text"></ion-input>
+  </ion-item>
+
+  
+  <!--DESCRIPCIÓN-->
+  <ion-item>
+    <ion-label>Descripción</ion-label>
+    <ion-input [(ngModel)]="Descripcion" type="text"></ion-input>
+  </ion-item>
+
+  <!--FOTO-->
+  <ion-item>
+    <ion-label>Foto</ion-label>
+    <ion-input [(ngModel)]="Foto" type="file"></ion-input>
+  </ion-item>
+
+  <!--LATITUD-->
+  <ion-item>
+    <ion-label>Latitud</ion-label>
+    <ion-input [(ngModel)]="Latitud" type="number"></ion-input>
+  </ion-item>
+
+  <!--LONGITUD-->
+  <ion-item>
+    <ion-label>Longitud</ion-label>
+    <ion-input [(ngModel)]="Longitud" type="number"></ion-input>
+  </ion-item>
+
+  <!--TOKEN-->
+  <ion-item>
+    <ion-label>Token</ion-label>
+    <ion-input [(ngModel)]="Token" [clearInput]="true"></ion-input>
+  </ion-item>
+
+  <!--BOTON-->
+  <div class="div-button">
+    <ion-button shape="round" (click)="ReportSituation()">
+      <ion-icon class="icon-left" name="save"></ion-icon>
+     <ion-text>Enviar</ion-text>
+    </ion-button>
+  </div>
+</ion-content>

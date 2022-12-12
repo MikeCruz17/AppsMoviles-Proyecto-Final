@@ -67,6 +67,26 @@ const routes: Routes = [
     path: 'recuperar-contrasena',
     loadChildren: () => import('./recuperar-contrasena/recuperar-contrasena.module').then( m => m.RecuperarContrasenaPageModule)
   },
+  {
+    path: 'bienvenido',
+    loadChildren: () => import('./bienvenido/bienvenido.module').then( m => m.BienvenidoPageModule)
+  },
+  {
+    path: 'reportar-situacion',
+    loadChildren: () => import('./reportar-situacion/reportar-situacion.module').then( m => m.ReportarSituacionPageModule)
+  },
+  {
+    path: 'cambiar-contrasena',
+    loadChildren: () => import('./cambiar-contrasena/cambiar-contrasena.module').then( m => m.CambiarContrasenaPageModule)
+  },
+  {
+    path: 'mis-situaciones',
+    loadChildren: () => import('./mis-situaciones/mis-situaciones.module').then( m => m.MisSituacionesPageModule)
+  },
+  {
+    path: 'mapa-situaciones',
+    loadChildren: () => import('./mapa-situaciones/mapa-situaciones.module').then( m => m.MapaSituacionesPageModule)
+  },
 
 ];
 
