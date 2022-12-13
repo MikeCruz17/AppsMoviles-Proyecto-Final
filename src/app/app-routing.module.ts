@@ -63,7 +63,8 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'recuperar-contrasena',
     loadChildren: () => import('./recuperar-contrasena/recuperar-contrasena.module').then( m => m.RecuperarContrasenaPageModule)
   },
@@ -87,7 +88,7 @@ const routes: Routes = [
     path: 'mapa-situaciones',
     loadChildren: () => import('./mapa-situaciones/mapa-situaciones.module').then( m => m.MapaSituacionesPageModule)
   },
-
+ 
 ];
 
 @NgModule({

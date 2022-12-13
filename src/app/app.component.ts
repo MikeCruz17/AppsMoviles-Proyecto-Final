@@ -1,29 +1,58 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  // CONVERTIR LOS DATOS DEL LOCAL-STORAGE EN JSON.
-  item = JSON.parse(localStorage.getItem('Usuario')!);
+  constructor(private alertController: AlertController, private router: Router) {
+    this.Confirmacion();
+ 
+  }
 
-  // UNA VEZ CONVERTIDO LOS DATOS A JSON, EXTRAEMOS EL NOMBRE DEL USUARIO.
-  // console.log(item.nombre)
+  public nombre!: string;
+  public correo!: string;
 
   appPages?: any[];
 
   Confirmacion() {
-    console.log(this.item);
+    // CONVERTIR LOS DATOS DEL LOCAL-STORAGE EN JSON.
+    let item = JSON.parse(localStorage.getItem('Usuario')!);
 
     // VISTAS QUE VERÁ EL USUARIO
-    if (this.item != null) {
+    if (item != null) {
+      this.nombre! = item.nombre!;
+      this.correo! = item.correo!;
+
       this.appPages = [
         { title: 'Noticias', url: '/noticias', icon: 'megaphone' },
-        { title: 'Reportar Situación', url: '/reportar-situacion', icon: 'people-circle' },
-        { title: 'Mis Situaciones', url: '/mis-situaciones', icon: 'people-circle' },
-        { title: 'Mapa de situaciones', url: '/mapa-situaciones', icon: 'business' },
-        { title: 'Cambiar Contraseña', url: '/cambiar-contrasena', icon: 'videocam' },
+        {
+          title: 'Reportar Situación',
+          url: '/reportar-situacion',
+          icon: 'people-circle',
+        },
+        {
+          title: 'Mis Situaciones',
+          url: '/mis-situaciones',
+          icon: 'people-circle',
+        },
+        {
+          title: 'Mapa de situaciones',
+          url: '/mapa-situaciones',
+          icon: 'business',
+        },
+        {
+          title: 'Cambiar Contraseña',
+          url: '/cambiar-contrasena',
+          icon: 'videocam',
+        },
+        {
+          title: 'Cerrar sesión',
+          url: '',
+          icon: 'videocam',
+        },
       ];
     } else {
       // VISTAS QUE VERÁ UN USUARIO COMÚN
@@ -38,13 +67,40 @@ export class AppComponent {
         { title: 'Voluntario', url: '/voluntario', icon: 'person-add' },
         { title: 'Acerca de', url: '/integrantes', icon: 'code-slash' },
         { title: 'LogIn', url: '/login', icon: 'code-slash' },
-        // {
-        //   title: 'Recuperar contraseña',
-        //   url: '/recuperar-contrasena',
-        //   icon: 'code-slash',
-        // },
       ];
     }
+  }
+
+  async CerrarSesion() {
+    const alert = await this.alertController.create({
+      header: '¿Estás seguro de cerrar sesión?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+         
+        },
+        {
+          text: 'Aceptar',
+          role: 'confirm',
+          handler: () => {
+
+            // CERRANDO LA SESION.
+            localStorage.removeItem('Usuario')!
+
+            // LIMPIANDO LOS CAMPOS.
+            this.correo = '';
+            this.nombre = '';
+
+            // RETORNANDO A LA VISTA PRINCIPAL
+            this.router.navigate(['/']);
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+
   }
 
   ionViewDidLoad() {
@@ -52,7 +108,4 @@ export class AppComponent {
   }
 
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {
-    this.Confirmacion();
-  }
 }
