@@ -87,7 +87,7 @@ export class MapsPage implements OnInit {
           lat: parseFloat(arr[i].lng),
           lng: parseFloat(arr[i].lat),
         },
-        draggable: true,
+        draggable: false,
       });
 
     }

@@ -1,0 +1,86 @@
+<ion-header>
+
+  <ion-toolbar color="orange">
+    <ion-title>Situación</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="arrow-back-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item-group>
+    <h4 class="text-center" class="ion-text-center">{{Datos?.titulo}}</h4>
+
+    <!--DESCRIPCION-->
+
+    <ion-item-divider>
+      <ion-label>Descripcion</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>{{Datos?.descripcion}}</ion-label>
+    </ion-item>
+
+    <!--ESTADO-->
+
+    <ion-item-divider>
+      <ion-label>Estado</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>{{Datos?.estado}}</ion-label>
+    </ion-item>
+
+
+    <!--Fecha-->
+
+    <ion-item-divider>
+      <ion-label>Fecha</ion-label>
+    </ion-item-divider>
+
+
+    <ion-item>
+      <ion-label>{{Datos?.fecha}}</ion-label>
+    </ion-item>
+
+    <!--FOTO-->
+
+    <ion-item-divider>
+      <ion-label>Foto</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <img src={{Datos?.foto}} style="display:block; margin:auto; height: 200px; padding: 10px;">
+    </ion-item>
+
+    <!--LATITUD-->
+
+    <ion-item-divider>
+      <ion-label>Latitud</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>{{Datos?.latitud}}</ion-label>
+    </ion-item>
+
+    <!--LONGITUD-->
+
+    <ion-item-divider>
+      <ion-label>Latitud</ion-label>
+    </ion-item-divider>
+
+    <ion-item>
+      <ion-label>{{Datos?.longitud}}</ion-label>
+    </ion-item>
+
+  </ion-item-group>
+
+  <h1></h1>
+
+</ion-content>

@@ -31,27 +31,27 @@ export class AppComponent {
         {
           title: 'Reportar Situación',
           url: '/reportar-situacion',
-          icon: 'people-circle',
+          icon: 'duplicate',
         },
         {
           title: 'Mis Situaciones',
           url: '/mis-situaciones',
-          icon: 'people-circle',
+          icon: 'alert-circle',
         },
         {
           title: 'Mapa de situaciones',
           url: '/mapa-situaciones',
-          icon: 'business',
+          icon: 'map',
         },
         {
           title: 'Cambiar Contraseña',
           url: '/cambiar-contrasena',
-          icon: 'videocam',
+          icon: 'key',
         },
         {
           title: 'Cerrar sesión',
           url: '',
-          icon: 'videocam',
+          icon: 'log-out',
         },
       ];
     } else {

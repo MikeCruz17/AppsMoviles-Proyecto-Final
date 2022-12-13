@@ -86,8 +86,13 @@ const routes: Routes = [
   },
   {
     path: 'mapa-situaciones',
-    loadChildren: () => import('./mapa-situaciones/mapa-situaciones.module').then( m => m.MapaSituacionesPageModule)
+    loadChildren: () => import('./Mapa-Situaciones-Content/mapa-situaciones/mapa-situaciones.module').then( m => m.MapaSituacionesPageModule)
   },
+  {
+    path: 'maps-modal',
+    loadChildren: () => import('./Mapa-Situaciones-Content/maps-modal/maps-modal.module').then( m => m.MapsModalPageModule)
+  },
+
  
 ];
 

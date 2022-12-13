@@ -78,7 +78,7 @@ export class LoginPage implements OnInit {
         // Y SE CONVIERTE A STRING PARA ALMACENARLOS EN EL LOCAL-STORAGE.
         const datos = JSON.stringify(Object(voluntario)["datos"]);
 
-        // INSERTAT DATS AL LOCAL-STORAGE.
+        // INSERTAT DATOS AL LOCAL-STORAGE.
         localStorage.setItem('Usuario', datos);
 
         // CONVERTIR LOS DATOS DEL LOCAL-STORAGE EN JSON.

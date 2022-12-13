@@ -1,23 +1,24 @@
 <ion-header>
 
-  <ion-toolbar color="primary"></ion-toolbar>
 
-  <ion-toolbar>
+  <ion-toolbar color="orange">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Reportar situación</ion-title>
+    <ion-title>Reportar situación <ion-icon name="alert-circle" class="title-icon"></ion-icon></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-   <!--TÍTULO-->
-   <ion-item>
+
+  <div class="mb-2">
+
+  <!--TÍTULO-->
+  <ion-item>
     <ion-label>Título</ion-label>
     <ion-input [(ngModel)]="Titulo" type="text"></ion-input>
   </ion-item>
 
-  
   <!--DESCRIPCIÓN-->
   <ion-item>
     <ion-label>Descripción</ion-label>
@@ -27,7 +28,14 @@
   <!--FOTO-->
   <ion-item>
     <ion-label>Foto</ion-label>
-    <ion-input [(ngModel)]="Foto" type="file"></ion-input>
+
+
+    <ion-button fill="clear" expand="full" color="light" (click)="selectImage()">
+
+      <ion-icon slot="start" name="camera"></ion-icon>
+
+    </ion-button>
+
   </ion-item>
 
   <!--LATITUD-->
@@ -42,17 +50,13 @@
     <ion-input [(ngModel)]="Longitud" type="number"></ion-input>
   </ion-item>
 
-  <!--TOKEN-->
-  <ion-item>
-    <ion-label>Token</ion-label>
-    <ion-input [(ngModel)]="Token" [clearInput]="true"></ion-input>
-  </ion-item>
-
   <!--BOTON-->
-  <div class="div-button">
-    <ion-button shape="round" (click)="ReportSituation()">
-      <ion-icon class="icon-left" name="save"></ion-icon>
-     <ion-text>Enviar</ion-text>
+  <div class="div-button ion-text-center">
+    <ion-button shape="round" (click)="ReportSituation()" color="orange" class="mb-2">
+      <ion-icon slot="start" name="save" color="light"></ion-icon>
+      <ion-text color="light">Guardar</ion-text>
     </ion-button>
   </div>
+
+</div>
 </ion-content>

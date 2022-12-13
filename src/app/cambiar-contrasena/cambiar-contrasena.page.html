@@ -1,8 +1,6 @@
 <ion-header>
 
-  <ion-toolbar color="primary"></ion-toolbar>
-
-  <ion-toolbar>
+  <ion-toolbar  color="orange">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -29,9 +27,10 @@
     <ion-input [(ngModel)]="ContrasenaNueva" [clearInput]="true" type="password"></ion-input>
   </ion-item>
 
-  <ion-button shape="round" (click)="ChangePassword()">
-    <ion-icon class="icon-left"></ion-icon>
-   <ion-text>Actualizar</ion-text>
+  <br>
+  <ion-button shape="round" (click)="ChangePassword()" color="orange" style="display:block; margin:auto;">
+      Actualizar
+
   </ion-button>
 
 </ion-content>

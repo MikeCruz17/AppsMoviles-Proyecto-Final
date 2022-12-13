@@ -1,15 +1,43 @@
 <ion-header>
 
-  <ion-toolbar color="primary"></ion-toolbar>
-
-  <ion-toolbar>
+  <ion-toolbar color="orange">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Mis situaciones</ion-title>
+    <ion-title>Mis situaciones <ion-icon name="layers-outline" class="title-icon"></ion-icon></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <div class="mb-2">
+
+    <ion-card *ngFor="let item of items">
+
+      <ion-card-header>
+
+        <img src={{item.foto}} style="height: 300px; border-radius: 5px;" />
+
+        <ion-card-title>{{item.titulo}}</ion-card-title>
+        <br>
+        
+        <ion-card-subtitle><b>Fecha:</b> {{item.fecha}}</ion-card-subtitle>
+        <ion-card-subtitle> <b>Estado:</b> {{item.estado}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <b>Descripción:</b> {{item.descripcion}}
+      </ion-card-content>
+
+      <ion-item-divider color="orange">
+        <ion-text style="width: 100%; text-align: center;"><b>Código:</b> {{item.id}}</ion-text>
+      </ion-item-divider>
+    
+
+    </ion-card>
+
+
+
+  </div>
 
 </ion-content>
