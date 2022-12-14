@@ -57,6 +57,7 @@ export class AppComponent {
     } else {
       // VISTAS QUE VERÁ UN USUARIO COMÚN
       this.appPages = [
+        { title: 'Inicio', url: '/slider', icon: 'information-circle' },
         { title: 'Historia', url: '/historia', icon: 'information-circle' },
         { title: 'Servicios', url: '/servicios', icon: 'people-circle' },
         { title: 'Noticias', url: '/noticias', icon: 'megaphone' },
@@ -66,7 +67,7 @@ export class AppComponent {
         { title: 'Miembros', url: '/miembros', icon: 'people' },
         { title: 'Voluntario', url: '/voluntario', icon: 'person-add' },
         { title: 'Acerca de', url: '/integrantes', icon: 'code-slash' },
-        { title: 'LogIn', url: '/login', icon: 'code-slash' },
+        { title: 'LogIn', url: '/login', icon: 'code-slash' }
       ];
     }
   }

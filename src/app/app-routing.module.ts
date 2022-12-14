@@ -92,6 +92,11 @@ const routes: Routes = [
     path: 'maps-modal',
     loadChildren: () => import('./Mapa-Situaciones-Content/maps-modal/maps-modal.module').then( m => m.MapsModalPageModule)
   },
+  {
+    path: 'slider',
+    loadChildren: () => import('./slider/slider.module').then( m => m.SliderPageModule)
+  },
+
 
  
 ];
