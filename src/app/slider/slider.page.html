@@ -8,9 +8,48 @@
 </ion-header>
 
 <ion-content>
-  <ion-slides [options]="slideOpts">
-    <ion-slide *ngFor="let img of banners">
-      <img [src]=img class="d-block w-100" alt="..." style="height: 270px; border-radius: 1rem !important;" />
-    </ion-slide>
-  </ion-slides>
+
+  <swiper
+    [autoplay]="true"
+    [keyboard]="true"
+    [pagination]="true"
+    [scrollbar]="true"
+    [zoom]="true"
+    effect="coverflow"
+  >
+    <ng-template swiperSlide
+      ><img src="https://www.palermo-huila.gov.co/PublishingImages/comite_defensa_civil_1.jpg" style="width: 600px; height: 600px"
+    /></ng-template>
+    <ng-template swiperSlide
+      ><img
+        src="https://munipaucarpata.gob.pe/wp-content/uploads/2021/06/AFICHE-SISMO.jpg"
+        style="width: 650px; height: 600px"
+      />></ng-template
+    >
+    <ng-template swiperSlide
+      ><img
+        src="https://scontent.fhex4-2.fna.fbcdn.net/v/t39.30808-6/318336279_526117949556511_1171651221332390505_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=730e14&_nc_ohc=MfqfdS1CgDUAX8ONkQ-&_nc_ht=scontent.fhex4-2.fna&oh=00_AfCsesuvw6V7UTHni51F5jiFwa-sJavQ2jACThJe6Ed4DQ&oe=639EE9BC"
+        style="width: 650px; height: 530px"
+      />></ng-template
+    >
+    <ng-template swiperSlide
+      ><img
+        src="https://pbs.twimg.com/media/FjFyTU_XkAEPiep?format=jpg&name=large"
+        style="width: 650px; height: 600px"
+      />></ng-template
+    >
+    <ng-template swiperSlide
+      ><img
+        src="https://pbs.twimg.com/media/FgwAoq3XoAYNTpN?format=jpg&name=large"
+        style="width: 650px; height: 600px"
+      />></ng-template
+    >
+    <ng-template swiperSlide
+      ><img
+        src="https://pbs.twimg.com/media/Ffm_p3WWAAEgyI9?format=jpg&name=large"
+        style="width: 650px; height: 550px"
+      />></ng-template
+    >
+  </swiper>
+  
 </ion-content>

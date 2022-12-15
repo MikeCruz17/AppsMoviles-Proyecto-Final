@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {IonicInputMaskModule} from "@thiagoprz/ionic-input-mask";
+import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -13,10 +12,8 @@ import { LoginPage } from './login.page';
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     IonicModule,
-    LoginPageRoutingModule,
-    IonicInputMaskModule
+    LoginPageRoutingModule
   ],
   declarations: [LoginPage]
 })

@@ -67,7 +67,7 @@ export class MisSituacionesPage implements OnInit {
        this.items=[...this.items, ...situaciones["datos"]];
 
        
-       console.log(this.items[0])
+       console.log(situaciones)
 
         
         // SI TODO FUE CORRECTO, MOSTRARA UN MENSAJE EN PANTALLA.

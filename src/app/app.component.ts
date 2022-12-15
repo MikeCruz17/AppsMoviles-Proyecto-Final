@@ -21,6 +21,9 @@ export class AppComponent {
     // CONVERTIR LOS DATOS DEL LOCAL-STORAGE EN JSON.
     let item = JSON.parse(localStorage.getItem('Usuario')!);
 
+    const result = localStorage.getItem('Usuario')!;
+    console.log(result)
+
     // VISTAS QUE VERÁ EL USUARIO
     if (item != null) {
       this.nombre! = item.nombre!;
@@ -57,7 +60,7 @@ export class AppComponent {
     } else {
       // VISTAS QUE VERÁ UN USUARIO COMÚN
       this.appPages = [
-        { title: 'Inicio', url: '/slider', icon: 'information-circle' },
+        { title: 'Inicio', url: '/slider', icon: 'home' },
         { title: 'Historia', url: '/historia', icon: 'information-circle' },
         { title: 'Servicios', url: '/servicios', icon: 'people-circle' },
         { title: 'Noticias', url: '/noticias', icon: 'megaphone' },
@@ -67,7 +70,7 @@ export class AppComponent {
         { title: 'Miembros', url: '/miembros', icon: 'people' },
         { title: 'Voluntario', url: '/voluntario', icon: 'person-add' },
         { title: 'Acerca de', url: '/integrantes', icon: 'code-slash' },
-        { title: 'LogIn', url: '/login', icon: 'code-slash' }
+        { title: 'LogIn', url: '/login', icon: 'log-in' }
       ];
     }
   }

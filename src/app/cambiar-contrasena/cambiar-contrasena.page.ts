@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ICambiarContrasena } from 'src/Interfaces/ICambiarContrasena';
+import { ObtenerToken } from '../functions/ObtenerToken';
 
 @Component({
   selector: 'app-cambiar-contrasena',
@@ -22,6 +23,10 @@ export class CambiarContrasenaPage implements OnInit {
   item?: ICambiarContrasena;
 
   ChangePassword(){
+
+    // OBTENER TOKEN.
+    this.Token = ObtenerToken();
+
     this.item = {
       token : this.Token!,
       anterior : this.ContrasenaAnterior!,

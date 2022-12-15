@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-toolbar color="orange">
 
@@ -11,7 +12,7 @@
 
 <ion-content>
 
-  <div>
+  <div class="mb-2">
 
     <!--CEDULA-->
     <ion-item>
@@ -25,23 +26,17 @@
       <ion-input [(ngModel)]="Clave" [clearInput]="true" type="password"></ion-input>
     </ion-item>
 
-    <div>
-      <a [routerLink]="['/recuperar-contrasena']">¿Olvidaste tu contraseña?</a>
+    <div class="mb-2 center">
+      <a [routerLink]="['/recuperar-contrasena']">¿Olvidaste tu contraseña? Pulse aquí</a>
     </div>
 
     <!--BOTON-->
-    <div class="div-button">
-      <ion-button shape="round" (click)="LogIn()">
-        <ion-icon class="icon-left" name="save"></ion-icon>
-       <ion-text>Enviar</ion-text>
+    <div class="div-button" class="center mb-2">
+      <ion-button shape="round" (click)="LogIn()" color="orange">
+        <ion-icon class="icon-left" name="log-in" style="color: white;"></ion-icon>
+       <ion-text style="color: white;">Iniciar</ion-text>
       </ion-button>
     </div>
-
-
-    <ion-button shape="round" (click)="borrarSesion()">
-      <ion-icon class="icon-left"></ion-icon>
-     <ion-text>Eliminar sesion</ion-text>
-    </ion-button>
 
   </div>
 

@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { VoluntarioPageRoutingModule } from './voluntario-routing.module';
 
 import { VoluntarioPage } from './voluntario.page';
-import {IonicInputMaskModule} from "@thiagoprz/ionic-input-mask";
 
 @NgModule({
   imports: [
@@ -15,7 +14,6 @@ import {IonicInputMaskModule} from "@thiagoprz/ionic-input-mask";
     FormsModule,
     IonicModule,
     VoluntarioPageRoutingModule,
-    IonicInputMaskModule
   ],
 
   

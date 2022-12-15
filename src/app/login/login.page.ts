@@ -44,7 +44,6 @@ export class LoginPage implements OnInit {
         console.log(this.item!);
         this.setPost(this.item!);
 
-        this.router.navigate(['/bienvenido']);
       } 
       
       // SI FALLA, MOSTRARA UN MODAL.
@@ -72,48 +71,31 @@ export class LoginPage implements OnInit {
 
     // ENVIANDO EL OBJETO A LA API.
     this.http.post(URL, data).subscribe(
-      (voluntario) => {
+      (voluntario: any) => {
    
         // ALMACENANDO LOS DATOS DEL USUARIO QUE RETORNA EL LOGIN
         // Y SE CONVIERTE A STRING PARA ALMACENARLOS EN EL LOCAL-STORAGE.
         const datos = JSON.stringify(Object(voluntario)["datos"]);
 
+      if(voluntario.exito != false){
+
         // INSERTAT DATOS AL LOCAL-STORAGE.
         localStorage.setItem('Usuario', datos);
+        this.router.navigate(['/bienvenido']);
+      }else{
+        this.presentAlert(false, 3);
+      }
 
-        // CONVERTIR LOS DATOS DEL LOCAL-STORAGE EN JSON.
-        const item = JSON.parse(localStorage.getItem('Usuario')!);
-
-        // UNA VEZ CONVERTIDO LOS DATOS A JSON, EXTRAEMOS EL NOMBRE DEL USUARIO.
-        console.log(item.nombre)
-        
-        // SI TODO FUE CORRECTO, MOSTRARA UN MENSAJE EN PANTALLA.
-        // this.presentAlert(true);
-
-
-        // Actualizar la pagina.
-      /*  setTimeout(() => {
-
-          window.location.reload();
-          
-        }, 3000);
-        */
       },
       (error) => {
       
-        console.log(error);
+       this.presentAlert(false, 3)
       }
     );
   }
 
-  borrarSesion(){
-
-    localStorage.removeItem('Usuario');
-
-  }
-
   // ALERTA 
-  async presentAlert(conf: boolean) {
+  async presentAlert(conf: boolean, caso?: number) {
 
     let alert: any;
 
@@ -125,7 +107,18 @@ export class LoginPage implements OnInit {
         buttons: ['OK'],
       });
 
-    }else{
+    }
+    
+    if(caso === 3){
+
+      alert = await this.alertController.create({
+        header: 'Error',
+        message: 'Cedula o Clave incorrectas.',
+        buttons: ['OK'],
+      });
+    }
+
+    else{
       alert = await this.alertController.create({
         header: 'Error',
         message: 'Debe llenar todos los campos',

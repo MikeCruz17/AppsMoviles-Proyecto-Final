@@ -1,8 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { GoogleMap } from '@capacitor/google-maps';
-import { environment } from 'src/environments/environment';
-import { IFormatoAlbergue } from 'src/Interfaces/IFormatoAlbergue';
 import { ISituaciones } from 'src/Interfaces/ISituaciones';
 import { ObtenerToken } from '../../functions/ObtenerToken';
 
@@ -61,7 +59,7 @@ export class MapaSituacionesPage implements OnInit {
       element: this.mapRef.nativeElement,
 
       // KEY DE LA API EXTRAIDA DESDE EL MODULO DE ENVIRONMENT.
-      apiKey: environment.google_maps_api_key,
+      apiKey: 'AIzaSyCXkEpJbqsIo8S9Hs3fPjA4MJUYIFrO7Ew',
       config: {
 
         // LATITUD Y LONGITUD DE LA REP. DOM.

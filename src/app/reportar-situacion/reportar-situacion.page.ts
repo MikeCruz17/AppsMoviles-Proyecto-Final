@@ -2,10 +2,10 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AlertController, Platform } from '@ionic/angular';
 import { IReportarSituacion } from 'src/Interfaces/IReportarSituacion';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+
 import { Directory, Filesystem } from '@capacitor/filesystem'
 import { ObtenerToken } from '../functions/ObtenerToken';
-
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 
 const IMAGE_DIR = 'stored-images';
 

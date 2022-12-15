@@ -4,18 +4,14 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Cambiar Contraseña</ion-title>
+    <ion-title>Modificar</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!--TOKEN-->
-  <ion-item>
-    <ion-label>Token</ion-label>
-    <ion-input [(ngModel)]="Token" [clearInput]="true"></ion-input>
-  </ion-item>
 
-  <!--CONTRASEÑA NUEVA-->
+  <div class="mb-2">
+    <!--CONTRASEÑA NUEVA-->
   <ion-item>
     <ion-label>Contraseña anterior</ion-label>
     <ion-input [(ngModel)]="ContrasenaAnterior" [clearInput]="true" type="password"></ion-input>
@@ -27,10 +23,16 @@
     <ion-input [(ngModel)]="ContrasenaNueva" [clearInput]="true" type="password"></ion-input>
   </ion-item>
 
-  <br>
-  <ion-button shape="round" (click)="ChangePassword()" color="orange" style="display:block; margin:auto;">
-      Actualizar
 
+  <div class="mb-2" style=" display: flex; justify-content: center;"> 
+    
+  <ion-button shape="round" (click)="ChangePassword()" color="orange">
+    <ion-icon class="icon-left" name="log-in" style="color: white;"></ion-icon>
+   <ion-text style="color: white;">Actualizar</ion-text>
   </ion-button>
+
+  </div>
+
+  </div>
 
 </ion-content>
